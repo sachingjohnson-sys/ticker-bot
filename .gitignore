@@ -3,6 +3,7 @@
 
 # Ignore macOS Finder files
 src/.DS_Store
+.DS_Store
 
 # Ignore dependencies
 /node_modules
