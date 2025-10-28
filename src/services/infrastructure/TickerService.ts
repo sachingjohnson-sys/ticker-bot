@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_BASE_URL } from "../../config/appConfig";
+import { API_BASE_URL } from "../../config/appConfig.js";
 
 export interface Ticker {
   ask: string;

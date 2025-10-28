@@ -1,4 +1,4 @@
-import type { ILogger } from "./ILogger";
+import type { ILogger } from "./ILogger.js";
 
 type Subscriber = (message: string) => void;
 export class ObservableLogger implements ILogger {

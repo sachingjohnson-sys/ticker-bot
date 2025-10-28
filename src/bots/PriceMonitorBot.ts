@@ -1,10 +1,10 @@
-import { ThresholdPriceChecker } from "../services/business/ThresholdPriceChecker";
-import { TickerService } from "../services/infrastructure/TickerService";
+import { ThresholdPriceChecker } from "../services/business/ThresholdPriceChecker.js";
+import { TickerService } from "../services/infrastructure/TickerService.js";
 import { Decimal } from "decimal.js";
-import { ConsoleLoggerSubscriber } from "../services/infrastructure/logger/subscribers/ConsoleLogger";
-import { ObservableLogger } from "../services/infrastructure/logger/ObservableLogger";
+import { ConsoleLoggerSubscriber } from "../services/infrastructure/logger/subscribers/ConsoleLogger.js";
+import { ObservableLogger } from "../services/infrastructure/logger/ObservableLogger.js";
 
-import { BOT_CONFIG } from "../config/appConfig";
+import { BOT_CONFIG } from "../config/appConfig.js";
 
 const tickerService = new TickerService();
 const thresholdPriceChecker = new ThresholdPriceChecker();

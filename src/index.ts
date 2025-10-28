@@ -1,3 +1,3 @@
-import "./bots/PriceMonitorBot";
+import "./bots/PriceMonitorBot.js";
 
 console.log("Ticker bot started...");

@@ -13,7 +13,7 @@
     // See also https://aka.ms/tsconfig/module
     "module": "es2022",
     "target": "ES2023",
-    "types": [],
+    "types": ["node"],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
