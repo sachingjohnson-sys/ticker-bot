@@ -1,5 +1,8 @@
+import fs from "fs/promises";
+import path from "path";
 
-import BOT_CONFIG_JSON from "../config/botConfig.json";
+const jsonPath = path.resolve("./src/config/botConfig.json");
+const BOT_CONFIG_JSON = JSON.parse(await fs.readFile(jsonPath, "utf-8"));
 
 export interface CurrencyConfig {
   pair: string;

@@ -16,7 +16,7 @@ export class ThresholdPriceChecker{
         const priceDifference: Decimal = price.minus(lastPrice).abs();
         const changePerc: Decimal = priceDifference.div(lastPrice);
 
-        if(changePerc.greaterThanOrEqualTo(threshold)){
+        if(changePerc.greaterThanOrEqualTo(threshold / 100)){
             this.lastTriggeredPrice.set(pair, price);
             return true;
         }

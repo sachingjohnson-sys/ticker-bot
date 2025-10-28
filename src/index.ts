@@ -1,3 +1,5 @@
-import "./bots/PriceMonitorBot";
-
-console.log("Ticker bot started...");
+import "./bots/PriceMonitorBot.js";
+import { startMonitoring } from "./bots/PriceMonitorBot.js";
+const timestamp = new Date().toISOString();
+console.log(`${timestamp} - Ticker bot started...`);
+startMonitoring();
