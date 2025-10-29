@@ -9,6 +9,7 @@ import { BotConfigDAO } from "../infrastructure/dao/BotConfigDAO.js";
 import { ConfigService } from "../services/data-service/ConfigService.js";
 import { AlertDAO } from "../infrastructure/dao/AlertDAO.js";
 import { AlertService } from "../services/data-service/AlertService.js";
+import { FileLoggerSubscriber, initLogFile } from "../infrastructure/logger/subscribers/FileLogger.js";
 
 const tickerService = new TickerService(new TickerDAO());
 const botConfigService = new ConfigService(new BotConfigDAO());
@@ -17,6 +18,9 @@ const thresholdPriceChecker = new ThresholdPriceChecker();
 
 const observableLogger = new ObservableLogger();
 observableLogger.subscribe(ConsoleLoggerSubscriber);
+
+await initLogFile();
+observableLogger.subscribe(FileLoggerSubscriber);
 
 export async function startMonitoring() {
   // Wrap each interval in a Promise that resolves when it's done
@@ -57,7 +61,7 @@ export async function startMonitoring() {
                     const timestamp = new Date();
                     await alertService.saveAlert(tickerId, configId, isAlert.changePerc, timestamp);
                     observableLogger.log(
-                    `[${timestamp.toISOString()}] : Alert for ${config.pair}, ${bidPrice}, ${config.threshold}, ${isAlert.changePerc}`
+                    `[${timestamp.toISOString()}] : Alert for pair: ${config.pair}, bid: ${bidPrice}, threshold: ${config.threshold}, rate: ${isAlert.changePerc}`
                     );
                 }
                 } catch (err) {

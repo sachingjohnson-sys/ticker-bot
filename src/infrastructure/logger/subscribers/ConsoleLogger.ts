@@ -1,3 +1,3 @@
 export const ConsoleLoggerSubscriber = (message: string) => {
-    console.log(`[${message}]`);
+    console.log(`${message}`);
 }
