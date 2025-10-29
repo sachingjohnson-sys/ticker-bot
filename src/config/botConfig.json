@@ -1,4 +1,3 @@
 [
-  { "pair": "BTC-USD", "interval": 5000, "threshold": 0.01 },
-  { "pair": "ABC-CDE", "interval": 5000, "threshold": 0.01 }
+  { "botId": 1, "pair": "$ADS-BOME", "interval": 2000, "threshold": 0.00000005, "stopAfter": 60000 }
 ]
