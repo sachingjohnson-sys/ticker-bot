@@ -1,4 +1,0 @@
-[
-  { "pair": "BTC-USD", "interval": 5000, "threshold": 0.01 },
-  { "pair": "ABC-CDE", "interval": 5000, "threshold": 0.01 }
-]

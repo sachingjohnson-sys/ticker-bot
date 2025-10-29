@@ -1,23 +1,47 @@
 import axios from "axios";
-import { API_BASE_URL } from "../../config/appConfig.js";
+import { API_BASE_URL } from "../../config/app.config.js";
+import { TickerDAO } from "../../infrastructure/dao/ticker.dao.js";
 
-export interface Ticker {
-  ask: string;
-  bid: string;
-  currency: string
+export interface TickerAPIReponse {
+  bid: number;
+  ask: number;
+  currency: string;
 }
 
 export class TickerService {
 
-  async fetchTickers(pair: string): Promise<Ticker | null> {
+  constructor(private tickerDAO: TickerDAO) {}
+
+
+
+  async saveTicker(
+    pair: string,
+    bid: number,
+    ask: number,
+    currency: string,
+    bot_config_id: number
+  ): Promise<number> {
+    const tickerId = await this.tickerDAO.create({
+      pair,
+      bid,
+      ask,
+      currency,
+      bot_config_id,
+    });
+
+    return tickerId;
+  }
+
+
+  async fetchTickers(pair: string): Promise<TickerAPIReponse | null> {
     const url = `${API_BASE_URL}/${pair}`;
     //console.log("SamplesURL: " + url);
     try {
-      const response = await axios.get<Ticker[]>(url);
+      const response = await axios.get<TickerAPIReponse[]>(url);
       //console.log("Full API response:", JSON.stringify(response.data, null, 2));
       //console.log("Samples: " + response.status);
       // Uphold returns an array of ticker objects
-      let ticker: Ticker | null = null;
+      let ticker: TickerAPIReponse | null = null;
       if(response.status == 404){
         throw new Error(`Incorrect pair provided in config:`);
       }
@@ -47,4 +71,5 @@ export class TickerService {
     }
 
   }
+
 }
