@@ -8,6 +8,6 @@ export class TickerDAO {
   }
 
   async getAll(): Promise<Ticker[]> {
-    return db("ticker").select("*");
+    return db("tickers").select("*");
   }
 }
