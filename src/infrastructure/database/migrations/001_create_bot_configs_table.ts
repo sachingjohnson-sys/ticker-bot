@@ -2,8 +2,8 @@ import type { Knex } from "knex";
 
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable("bot_configs", (table) => {
-    table.increments("id").primary();         // internal PK
-    table.integer("botId").notNullable();     // external bot instance ID
+    table.increments("id").primary();      
+    table.integer("bot_id").notNullable();     
     table.string("pair").notNullable();
     table.integer("interval").notNullable();
     table.decimal("threshold").notNullable();

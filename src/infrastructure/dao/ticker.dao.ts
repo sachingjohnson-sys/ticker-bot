@@ -1,5 +1,5 @@
-import { db } from "../../config/dbConfig.js";
-import type { Ticker } from "../../model/Ticker.js";
+import { db } from "../../config/db.config.js";
+import type { Ticker } from "../../model/ticker.model.js";
 
 export class TickerDAO {
   async create(ticker: Ticker): Promise<number> {

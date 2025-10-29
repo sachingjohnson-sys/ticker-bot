@@ -1,6 +1,6 @@
 export interface BotConfig {
   id?: number;
-  botId: number;
+  bot_id: number;
   pair: string;
   interval: number;
   threshold: number;

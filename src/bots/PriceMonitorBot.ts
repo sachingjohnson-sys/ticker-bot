@@ -1,14 +1,14 @@
-import { ThresholdPriceChecker } from "../services/domain-service/ThresholdPriceChecker.js";
-import { TickerService } from "../services/data-service/TickerService.js";
+import { ThresholdPriceChecker } from "../services/domain-service/threshold-price-checker.service.js"
+import { TickerService } from "../services/data-service/ticker.service.js";
 import { ConsoleLoggerSubscriber } from "../infrastructure/logger/subscribers/ConsoleLogger.js";
 import { ObservableLogger } from "../infrastructure/logger/ObservableLogger.js";
 
-import { BOT_CONFIG } from "../config/appConfig.js";
-import { TickerDAO } from "../infrastructure/dao/TickerDAO.js";
-import { BotConfigDAO } from "../infrastructure/dao/BotConfigDAO.js";
-import { ConfigService } from "../services/data-service/ConfigService.js";
-import { AlertDAO } from "../infrastructure/dao/AlertDAO.js";
-import { AlertService } from "../services/data-service/AlertService.js";
+import { BOT_CONFIG } from "../config/app.config.js";
+import { TickerDAO } from "../infrastructure/dao/ticker.dao.js";
+import { BotConfigDAO } from "../infrastructure/dao/botConfig.dao.js";
+import { ConfigService } from "../services/data-service/config.service.js";
+import { AlertDAO } from "../infrastructure/dao/alert.dao.js";
+import { AlertService } from "../services/data-service/alert.service.js";
 import { FileLoggerSubscriber, initLogFile } from "../infrastructure/logger/subscribers/FileLogger.js";
 
 const tickerService = new TickerService(new TickerDAO());

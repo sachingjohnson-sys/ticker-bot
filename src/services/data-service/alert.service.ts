@@ -1,4 +1,4 @@
-import { AlertDAO } from "../../infrastructure/dao/AlertDAO.js";
+import { AlertDAO } from "../../infrastructure/dao/alert.dao.js";
 
 export class AlertService {
   constructor(private alertDao: AlertDAO) {}

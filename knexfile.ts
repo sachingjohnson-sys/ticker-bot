@@ -1,4 +1,4 @@
-import { dbConfig } from "./src/config/dbConfig.js";
+import { dbConfig } from "./src/config/db.config.js";
 const config =  {
   development: {
     ...dbConfig,

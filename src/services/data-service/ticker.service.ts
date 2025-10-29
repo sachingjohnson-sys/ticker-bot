@@ -1,6 +1,6 @@
 import axios from "axios";
-import { API_BASE_URL } from "../../config/appConfig.js";
-import { TickerDAO } from "../../infrastructure/dao/TickerDAO.js";
+import { API_BASE_URL } from "../../config/app.config.js";
+import { TickerDAO } from "../../infrastructure/dao/ticker.dao.js";
 
 export interface TickerAPIReponse {
   bid: number;

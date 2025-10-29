@@ -1,5 +1,6 @@
 # Ignore compiled output
 /dist
+alerts-api/dist
 
 # Ignore macOS Finder files
 src/.DS_Store
@@ -7,6 +8,7 @@ src/.DS_Store
 
 # Ignore dependencies
 /node_modules
+alerts-api/node_modules
 
 # Ignore log files
 *.log

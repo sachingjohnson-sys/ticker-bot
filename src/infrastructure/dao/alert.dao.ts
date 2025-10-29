@@ -1,5 +1,5 @@
-import { db } from "../../config/dbConfig.js";
-import type { Alert } from "../../model/Alert.js";
+import { db } from "../../config/db.config.js";
+import type { Alert } from "../../model/alert.model.js";
 
 export class AlertDAO
  {

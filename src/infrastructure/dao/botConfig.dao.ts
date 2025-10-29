@@ -1,5 +1,5 @@
-import { db } from "../../config/dbConfig.js";
-import type { BotConfig } from "../../model/BotConfig.js";
+import { db } from "../../config/db.config.js";
+import type { BotConfig } from "../../model/botConfig.model.js";
 
 export class BotConfigDAO {
   async create(botConfig: BotConfig): Promise<number> {
