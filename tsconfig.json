@@ -48,7 +48,7 @@
     "moduleResolution": "NodeNext",
     "outDir": "./dist"
   },
-  "include": ["src/**/*", "tests"],
+  "include": ["src/**/*", "migrate.ts", "knexfile.ts"],
   "ts-node": {
     "esm": true
   }

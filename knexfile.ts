@@ -1,11 +1,13 @@
 import { dbConfig } from "./src/config/db.config.js";
-const config =  {
+
+const config = {
   development: {
     ...dbConfig,
     migrations: {
-      directory: './migrations',
-      extension: 'ts',
+      directory: './migrations', 
+      extension: 'js',
     },
   },
 };
+
 export default config;
