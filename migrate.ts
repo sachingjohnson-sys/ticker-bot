@@ -1,6 +1,6 @@
 import "dotenv/config";
 import knexPkg from "knex";
-import knexfile from "./knexfile.ts"; // notice the `.ts` extension
+import knexfile from "./knexfile.js"; // notice the `.ts` extension
 
 const knex = knexPkg(knexfile.development);
 
@@ -12,7 +12,6 @@ async function runMigrations() {
     console.error("Migration failed:", err);
   } finally {
     await knex.destroy();
-    process.exit(0);
   }
 }
 

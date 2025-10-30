@@ -17,3 +17,8 @@ alerts-api/node_modules
 .env
 .env.local
 .env.*.local
+alerts-api/.env
+
+
+# test coverage
+coverage

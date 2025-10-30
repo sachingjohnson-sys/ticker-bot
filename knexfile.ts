@@ -3,8 +3,8 @@ const config =  {
   development: {
     ...dbConfig,
     migrations: {
-      directory: "./src/infrastructure/database/migrations",
-      extension: "ts"
+      directory: './migrations',
+      extension: 'ts',
     },
   },
 };
