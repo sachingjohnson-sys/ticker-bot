@@ -122,8 +122,8 @@ npm run start:prod
 ```
 ### Docker Setup
 ```env
-docker compose build alert_api
-docker compose up alert_api
+docker compose build alerts_api
+docker compose up alerts_api
 ```
 
 ### Using the Alert API
