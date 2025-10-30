@@ -112,10 +112,10 @@ docker compose up bot_app
 ```
 Logs are written to bot.log on the host machine.
 
-## Alert API
+## Alerts API
 ### Local Setup
 ```env
-cd alerts_api
+cd alerts-api
 npm install
 npm run build
 npm run start:prod
