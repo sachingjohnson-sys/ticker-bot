@@ -39,10 +39,15 @@ Create a .env file in `both` the root folder and the alerts_api/ directory based
 Example:
 
 POSTGRES_USER=postgres
+
 POSTGRES_PASSWORD=postgres
+
 POSTGRES_DB=ticker_bot
+
 POSTGRES_PORT=5432
+
 POSTGRES_HOST=db
+
 UPHOLD_API_URL=https://api.uphold.com/v0/ticker
 
 # Notes:
@@ -57,10 +62,12 @@ In production, these values should be injected securely from a secrets manager o
 Edit bot.config.json in the project root to define your monitoring bots.
 stopAfter is optional and is added to auto terminate the bot after x ms.
 Eg:
+`
 [
   { "botId": 1, "pair": "BTC-USD", "interval": 5000, "threshold": 0.01 },
   { "botId": 2, "pair": "EUR-USD", "interval": 1000, "threshold": 0.000005, "stopAfter": 60000 }
 ]
+`
 
 # Local Development (Non-Docker)
 # Install dependencies
