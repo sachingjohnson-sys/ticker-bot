@@ -1,6 +1,8 @@
 import axios from "axios";
-import { API_BASE_URL } from "../../config/app.config.js";
 import { TickerDAO } from "../../infrastructure/dao/ticker.dao.js";
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 export interface TickerAPIReponse {
   bid: number;
@@ -34,13 +36,11 @@ export class TickerService {
 
 
   async fetchTickers(pair: string): Promise<TickerAPIReponse | null> {
-    const url = `${API_BASE_URL}/${pair}`;
-    //console.log("SamplesURL: " + url);
+    const url = `${process.env.UPHOLD_API_URL!}/${pair}`;
+
     try {
       const response = await axios.get<TickerAPIReponse[]>(url);
-      //console.log("Full API response:", JSON.stringify(response.data, null, 2));
-      //console.log("Samples: " + response.status);
-      // Uphold returns an array of ticker objects
+
       let ticker: TickerAPIReponse | null = null;
       if(response.status == 404){
         throw new Error(`Incorrect pair provided in config:`);

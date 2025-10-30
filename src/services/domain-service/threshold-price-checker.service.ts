@@ -6,7 +6,7 @@ export class ThresholdPriceChecker{
 
     check(pair: string, price: number, threshold: number){
         let lastPrice: number | null = this.lastTriggeredPrice.get(pair) ?? null;
-        if (lastPrice === null) {
+        if (lastPrice === null) { // first record of price will never be alerted but will be used as the starting benchmark
             this.lastTriggeredPrice.set(pair, price);
             lastPrice = price;
         }
