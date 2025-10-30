@@ -48,6 +48,7 @@ based on `.env.example`.
 Example:
 
 ```env
+
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 POSTGRES_DB=ticker_bot
@@ -57,6 +58,7 @@ UPHOLD_API_URL=https://api.uphold.com/v0/ticker
 
 
 Notes:
+Above are the correct values to be used. All key values are mandatory.
 
 For local development, set POSTGRES_HOST=localhost.
 
