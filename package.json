@@ -6,10 +6,10 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/index.js",
+    "start": "npm run build && node dist/src/index.js",
     "dev": "ts-node src/index.ts",
     "db:test": "node --loader ts-node/esm tests/integration/dbConnectionTest.ts",
-    "migrate:latest": "tsc && node dist/migrate.js",
+    "migrate:latest": "node dist/migrate.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],

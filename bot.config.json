@@ -1,4 +1,4 @@
 [
-  { "botId": 1, "pair": "BTC-USD", "interval": 1000, "threshold": 0.000005, "stopAfter": 60000 },
+  { "botId": 1, "pair": "BTC-USD", "interval": 1000, "threshold": 0.000005},
   { "botId": 2, "pair": "EUR-USD", "interval": 1000, "threshold": 0.000005, "stopAfter": 60000 }
 ]

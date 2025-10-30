@@ -4,38 +4,36 @@ WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
-# Copy source code, migrations, and configs
+# Copy source and configs
 COPY tsconfig.json ./
 COPY src ./src
 COPY migrations ./migrations
 COPY knexfile.ts ./
 COPY migrate.ts ./
 COPY .env ./
+COPY bot.config.json ./
 COPY run_migrations.sh ./
 RUN chmod +x run_migrations.sh
 
 # Build TypeScript -> JavaScript
-RUN npm run build
+RUN npx tsc
 
 # ---- Production stage ----
 FROM node:20-alpine
 WORKDIR /app
 
-# Copy only needed runtime files
+# Copy necessary runtime files
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/migrations ./migrations
-COPY --from=builder /app/migrate.ts ./migrate.ts
 COPY --from=builder /app/run_migrations.sh ./
 COPY --from=builder /app/.env ./
-COPY --from=builder /app/tsconfig.json ./tsconfig.json
+COPY --from=builder /app/bot.config.json ./
 
-# Install only production dependencies and ts-node locally
-RUN npm ci --omit=dev && npm install --save-dev ts-node typescript
-
+RUN npm install --omit=dev
 RUN chmod +x run_migrations.sh
 
-# Run DB migrations, then start the bot worker
-CMD ["sh", "-c", "./run_migrations.sh && node dist/index.js"]
+# Run migrations and start app
+CMD ["sh", "-c", "./run_migrations.sh && node dist/src/index.js"]

@@ -51,7 +51,6 @@ services:
       - ./bot.log:/app/bot.log
     networks:
       - app-network
-    command: ["sh", "-c", "./run_migrations.sh && node src/index.js"]
 
 volumes:
   db_data:

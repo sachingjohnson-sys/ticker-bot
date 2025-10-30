@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 
-const jsonPath = path.resolve("./src/config/bot.config.json");
+const jsonPath = path.resolve("./bot.config.json");
 const BOT_CONFIG_JSON = JSON.parse(await fs.readFile(jsonPath, "utf-8"));
 
 export interface Config {

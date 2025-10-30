@@ -17,7 +17,7 @@ const alertService = new AlertService(new AlertDAO);
 const thresholdPriceChecker = new ThresholdPriceChecker();
 
 const observableLogger = new ObservableLogger();
-observableLogger.subscribe(ConsoleLoggerSubscriber);
+//observableLogger.subscribe(ConsoleLoggerSubscriber); // Option to add multiple subscribers
 
 await initLogFile();
 observableLogger.subscribe(FileLoggerSubscriber);
