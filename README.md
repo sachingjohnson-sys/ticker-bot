@@ -49,12 +49,12 @@ Example:
 
 ```env
 
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
+POSTGRES_USER=<>
+POSTGRES_PASSWORD=<>
 POSTGRES_DB=ticker_bot
 POSTGRES_PORT=5432
 POSTGRES_HOST=db
-UPHOLD_API_URL=https://api.uphold.com/v0/ticker
+UPHOLD_API_URL=<>
 
 
 Notes:
