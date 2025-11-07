@@ -1,6 +1,6 @@
 #  Ticker Bot - Sachin Johnson
 
-A Node.js application that connects to the Uphold Ticker API to monitor cryptocurrency and currency pairs, generating alerts when thresholds are breached.  
+A Node.js application that connects to the Ticker API to monitor cryptocurrency and currency pairs, generating alerts when thresholds are breached.  
 The bot is configurable via a JSON configuration file and stores its data in a PostgreSQL database.
 
 ---
